@@ -1,0 +1,63 @@
+\begin{frame}[t]
+    \frametitle{Problem to Solve}
+    \begin{center}
+		\resizebox{\textwidth}{!}{
+			%\input{figures/evolving_graph.tikz}
+            \includegraphics[]{figures/Inverse Problem Figure.jpg}
+		}
+	\end{center}
+
+    Forward Problem: Given a graph, $\hat{\alpha}$, and $\hat{\omega}$: compute states of the graph for $i=1,2, \dots J$
+    
+    \vspace{1.0em}
+    Inverse Problem: Given a graph and $J$ states of the graph: compute $\hat{\alpha}$ and $\hat{\omega}$.
+    
+\end{frame}
+
+\begin{frame}[t]
+
+    \frametitle{Defining the Inverse Problem}
+    
+    \defproblem{Evolving Graph Model}
+	{A graph $G$, $J$ states of the graph $F$, and a matrix $R$ containing the frequencies of each edge in $F$}
+	{What mapping on the integers $q$ minimizes $\sum_{v_1,v_2 \in G}R[v_1][v_2](q(v_1) - q(v_2))^2$?}
+
+    \onslide<2-4> {
+        Problem: Since $q$ is not differentiable, this problem is intractable.\\
+        Solution: We relax $q$ to be a vector instead of a function
+    }
+
+    \onslide<3-4> {
+        \vspace{1.2em}
+        This leads to the form: $q^T\Delta_Rq$.\\
+        Note: $\Delta_R$ is the Laplacian matrix of $R$
+    }
+
+    \onslide<4> {
+        \vspace{1.2em}
+        Big problem: $q^T\Delta_Rq$ is a nonlinear (quadratic) inverse problem.
+    }
+
+\end{frame}
+
+\begin{frame}[t]
+    \frametitle{Solving the Quadratic Inverse Problem}
+
+    Problem to solve: $q^T\Delta_Rq$
+    
+    \onslide<2-3>{
+        \vspace{1.2em}
+        One solution: eigenanalysis by cases on the matrix $\Delta_R$\\
+        Runtime: $O(n^3)$\\
+        By: Grindrod and Higham (2009)
+    }
+
+    \onslide<3>{
+        \vspace{1.2em}
+        My solution: convert to optimization, perform gradient descent\\
+        Derivative: $q^T(A + A^T)$\\
+        Compute the derivative and take a step towards it, then repeat.\\
+        Runtime: $O(sn^2)$, where $s$ is the number of steps to converge
+    }
+
+\end{frame}

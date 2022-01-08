@@ -1,0 +1,90 @@
+%{\setbeamercolor{background canvas}{bg=felix_bg}
+\begin{frame}[t]
+	\frametitle{Outline}
+	\begin{enumerate}
+		\item Introduction to evolving graphs
+		\item Introduction to the inverse problem\footnote{Grindrod Peter and Higham Desmond J. 2010, Evolving graphs: dynamical models, inverse problems and propagation}
+		\item My approach and results
+	\end{enumerate}
+
+	
+\end{frame}
+
+
+\begin{frame}[t]
+	\frametitle{Graphs}
+    \begin{center}
+		\resizebox{\textwidth}{!}{
+			\input{figures/graph_example.tikz}
+		}
+	\end{center}
+
+	\onslide<2-4>{
+		{\large \edittext{Vertex: Someone/something with connections.}}
+		
+	}
+	\vspace{.7em}
+
+	\onslide<3-4>{
+		{\large \lifttext{Edge: A connection between two vertices.}}
+	}
+	\vspace{.7em}
+
+	\onslide<4>{
+		Examples: Social media, airport network, the internet
+	}
+
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Evolving Graphs}
+
+	\begin{center}
+		\resizebox{\textwidth}{!}{
+			\input{figures/evolving_graph.tikz}
+		}
+	\end{center}
+
+	\onslide<5>{
+		We assign each edge two probabilities:
+		\vspace{1.0em}
+
+		\addtext{Birth Rate:} $\hat{\alpha}(e)$, the probability that the edge will appear.
+		\vspace{1.0em}
+
+		\removetext{Death Rate:} $\hat{\omega}(e)$, the probability that the edge will disappear.
+	}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Range-Dependent Graphs}
+
+	Suppose some assignment of the integers ${1...n}$\\
+	%\vspace{1.0em}
+	$i_v$ = the integer assigned to vertex $v$
+	
+	\onslide<2-4>{
+		\vspace{1.0em}
+		Range: An edge (u, v) has range $|i_u - i_v|$
+		\vspace{1.0em}
+	}
+
+	\onslide<3-4>{
+		We can define birth rates and death rates as a function of range:
+		\vspace{0.5em}
+		$\hat{\alpha}(e) = \alpha(|i_u - i_v|)$\\
+		$\hat{\omega}(e) = \omega(|i_u - i_v|)$
+	}
+
+	\begin{center}
+		\resizebox{\textwidth}{!}{
+			\input{figures/path.tikz}
+		}
+	\end{center}
+
+	\onslide<4>{
+		Range of (v1, v4) = $|1-4| = 3$\\
+		Range of (v2, v3) = $|2-3| = 1$
+	}
+
+\end{frame}

@@ -1,0 +1,31 @@
+\documentclass{beamer}
+\usepackage{amsmath, amsthm}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usetikzlibrary{positioning}
+% for gadget figure
+\usetikzlibrary{automata, shadows, calc, fit}
+
+\usepackage{xcolor}
+\definecolor{felix_bg}{HTML}{f3eede}
+\definecolor{felix_text}{HTML}{308f94}
+
+\input{notation.tex}
+
+\title{Inverse Problems in Evolving Graphs}
+\author{Andrew Fraser}
+\date{6 December 2021}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\input{sections/intro.tex}
+	\input{sections/inverse.tex}
+	\input{sections/results.tex}
+
+\end{document}

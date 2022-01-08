@@ -1,0 +1,45 @@
+
+% colors
+\colorlet{solvecol}{blue!50!green!90!gray}
+\colorlet{editcol}{red!60!yellow!90!black}
+\colorlet{liftcol}{red!60!blue}
+\colorlet{addcol}{green!60!black}
+\colorlet{removecol}{red}
+
+% highlight text
+\newcommand{\solvetext}[1]{\textcolor{solvecol}{\textbf{#1}}}
+\newcommand{\edittext}[1]{\textcolor{editcol}{\textbf{#1}}}
+\newcommand{\lifttext}[1]{\textcolor{liftcol}{\textbf{#1}}}
+\newcommand{\addtext}[1]{\textcolor{addcol}{\textbf{#1}}}
+\newcommand{\removetext}[1]{\textcolor{removecol}{\textbf{#1}}}
+
+% problem style
+\newcommand{\probname}[1]{\textsc{#1}}
+
+% simple problem box
+\newcommand{\defproblem}[3]{
+    \hfill\\\smallskip\noindent
+    \begin{tabularx}{\textwidth}{|l X|}
+        \hline
+        \multicolumn{2}{|l|}{\probname{#1}}\\
+        \textbf{Input:}&#2\\
+        \textbf{Question:}&#3\smallskip\\\hline
+    \end{tabularx}
+    \smallskip
+}
+
+% parameters and classes
+\newcommand{\editop}{\psi}
+\newcommand{\prob}{\pi}
+\newcommand{\class}{\mathcal{C}}
+\newcommand{\paramclass}{\mathcal{C}_\lambda}
+
+% cost and opt operators
+\DeclareMathOperator*{\optop}{OPT}
+\newcommand{\opt}{\ensuremath{\optop}}
+\newcommand{\optsol}[2]{\opt_{#1}(#2)}
+
+\DeclareMathOperator*{\costop}{cost}
+\newcommand{\cost}{\ensuremath{\costop}}
+
+\newtheorem{conjecture}{Conjecture}

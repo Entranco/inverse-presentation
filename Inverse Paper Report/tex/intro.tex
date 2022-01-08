@@ -1,0 +1,24 @@
+\section{Introduction}
+Graphs of vertices and edges are a mathematical abstraction that has been used commonly to refer to people or objects and their connections.
+Most recently, graphs have expanded to depicting structures that we see in technology.
+Especially worth noting lately are graphs being used to depict social media networks, the internet, and other complex social structures.
+In particular, it is unique that these new graphs can evolve over time.
+Due to their ability to hang in data over the internet, these graphs can evolve to many different states.
+We can model these changes through an evolving graph, which is a collection of states of the graph at different points in time.
+
+This new type of graph leads to the question: can we predict what the graph will look like in the future?
+This can be used to help predict and recommend choices of friends on social networks or predict connections and popular sites
+that may arise on the internet.
+One method of predicting the behaviour of evolving graphs has been proposed by~\cite{grindrod2009}, where they propose a model
+for evolving graphs that can be solved as an inverse problem.
+Using the techniques I've learned in CS 6958, I explore solving this inverse problem. In particular, I have the following goals:
+
+\begin{itemize}
+	\item To solve the inverse problem faster using methods from class
+	\item To solve the inverse problem more accurately
+	\item To test these solutions on additional real data (which is made possible by speeding up these solutions)
+\end{itemize}
+
+As the current solution takes $O(n^3)$, solving the inverse problem on large datasets is not plausible.
+By speeding up the solution, I hope to apply this inverse problems to datasets that are larger than the
+~100 vertex graphs tested in~\cite{grindrod2009}.

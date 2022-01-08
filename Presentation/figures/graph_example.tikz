@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+    \tikzstyle{node} = [circle, fill=lightgray!90!black, draw, thick]
+    \tikzstyle{edge} = [thick]
+    \tikzstyle{edit} = [fill=editcol]
+    \tikzstyle{lift} = [fill=liftcol]
+
+    \node (1) [node] {};
+    \node (2) [node, above right=0.5cm and 0.3cm of 1] {};
+    \node (3) [node, right=0.3cm of 2] {};
+    \node (4) [node, above left=0.5cm and 0.3cm of 1] {};
+    \node (5) [node, below=0.5cm of 2] {};
+
+    \draw (1) edge [edge] (2);
+    \draw (2) edge [edge] (3);
+    \draw (1) edge [edge] (4);
+    \draw (2) edge [edge] (4);
+    \draw (2) edge [edge] (5);
+
+    \onslide<2-4>{
+        \node (1) [node, fill=editcol] {};
+    }
+
+    \onslide<3-4>{
+        \draw (1) edge [edge, color=liftcol] (2);
+    }
+
+
+\end{tikzpicture}
